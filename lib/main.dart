@@ -1,8 +1,6 @@
 import 'package:divar/post.dart';
 import 'package:flutter/material.dart';
-
 import 'Category.dart';
-
 void main() {
   runApp(const MyApp());
 }

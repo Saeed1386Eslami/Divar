@@ -1,4 +1,5 @@
-import 'package:divar/main.dart';
+import 'package:divar/PostDetail.dart';
+
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
@@ -34,7 +35,7 @@ class Categorylist extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SecondPage(),
+                    builder: (context) => const Detail(),
                   ),
                 );
               },

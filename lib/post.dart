@@ -7,7 +7,7 @@ class post extends StatefulWidget {
   }
 }
 
-class _poststate extends State<post> {g
+class _poststate extends State<post> {
   bool isliked = false;
 
   @override
