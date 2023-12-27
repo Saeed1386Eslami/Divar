@@ -88,31 +88,29 @@ class Detail extends StatelessWidget {
 }
 
     class Onvan extends StatelessWidget {
-    const Onvan({super.key});
+      const Onvan({super.key});
 
-    @override
-    Widget build(BuildContext context) {
-    return Padding(
-    padding: const EdgeInsets.all(7.0),
-    child: (Row(
-    children: [
+      @override
+      Widget build(BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.all(7.0),
+          child: (Row(
+            children: [
 
-    Expanded(child: Text('مقدار' ,
-    style: TextStyle(
-    fontSize: textSize2,
-      color: textColor
-    ),
-    )),
-    Text('عنوان' ,
-      style: TextStyle(
-          fontSize: textSize2,
-          color: textColor2,
-    ),
-    ),
-      ],
-    )),
-    );
+              Expanded(child: Text('مقدار',
+                style: TextStyle(
+                    fontSize: textSize2,
+                    color: textColor
+                ),
+              )),
+              Text('عنوان',
+                style: TextStyle(
+                  fontSize: textSize2,
+                  color: textColor2,
+                ),
+              ),
+            ],
+          )),
+        );
+      }
     }
-    }
-
-
