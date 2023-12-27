@@ -69,3 +69,4 @@ class _poststate extends State<post> {
         ));
   }
 }
+

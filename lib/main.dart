@@ -1,3 +1,4 @@
+import 'package:divar/PostDetail.dart';
 import 'package:divar/post.dart';
 import 'package:flutter/material.dart';
 import 'Category.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
 class FirstPage extends StatelessWidget {
   const FirstPage({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,8 +42,18 @@ class FirstPage extends StatelessWidget {
             const Divider(
               color: Colors.black,
             ),
-            post(),
-            Divider(
+        InkWell(
+          child: post(),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Detail(),
+              ),
+            );
+          },
+        ),
+          Divider(
               color: Colors.black,
             ),
             post(),
