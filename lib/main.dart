@@ -46,7 +46,7 @@ class FirstPage extends StatelessWidget {
               color: Colors.black,
             ),
         InkWell(
-          child: post(),
+          child: post(" محصول شماره یک ", "400 تومان" , " امروز " , "https://picsum.photos/250?image=9"),
           onTap: () {
             Navigator.push(
               context,
@@ -59,19 +59,19 @@ class FirstPage extends StatelessWidget {
           Divider(
               color: Colors.black,
             ),
-            post(),
+            post (" محصول شماره دو " , "700 تومان " , " دیروز " ,'https://picsum.photos/250?image=10',),
             Divider(
               color: Colors.black,
             ),
-            post(),
+            post(" محصول شماره سه " , "300 تومان" , " سه روز پیش " , "https://picsum.photos/250?image=11"),
             Divider(
               color: Colors.black,
             ),
-            post(),
+            post(" محصول شماره چهار " , " 900 تومان" , " 5 روز پیش " , "https://picsum.photos/250?image=12"),
             Divider(
               color: Colors.black,
             ),
-            post(),
+            post(" محصول شماره پنج " , " 100 نومان " , " یک هفته پیش " , "https://picsum.photos/250?image=13"),
             Divider(
               color: Colors.black,
             ),

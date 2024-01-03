@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-class post extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _poststate();
-  }
-}
+class post extends StatelessWidget {
 
-class _poststate extends State<post> {
-  bool isliked = false;
+  String name;
+  String price;
+  String date;
+  String imageUrl;
+
+  post(this.name , this.price , this.date , this.imageUrl);
+
 
   @override
   Widget build(BuildContext context) {
     var textColor = Colors.grey;
-    var textSize = 12.0;
+    var textSize = 20.0;
+    var textColor2 = Colors.black;
     return Padding(
         padding: const EdgeInsets.all(16),
         child: SizedBox(
@@ -23,7 +24,7 @@ class _poststate extends State<post> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
-                  'https://picsum.photos/250?image=9',
+                  imageUrl,
                   width: 200,
                   height: 200,
                 ),
@@ -32,32 +33,20 @@ class _poststate extends State<post> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                    IconButton(
-                        onPressed: () {
-                          setState(() {
-                            isliked= !isliked;
-                          });
-                        },
-                        icon: isliked
-                            ? Icon(Icons.favorite)
-                            : Icon(Icons.favorite_border)),
+                    Text(name  , style: TextStyle(
+                      color: textColor2,
+                      fontSize: textSize,
+                    ),
+                    ),
                     const Spacer(),
-                    Text(
-                      '100.000.000تومان',
+                    Text(price ,
                       style: TextStyle(
                         color: textColor,
                         fontSize: textSize,
                       ),
                     ),
                     Text(
-                      '100.000.000تومان',
-                      style: TextStyle(
-                        color: textColor,
-                        fontSize: textSize,
-                      ),
-                    ),
-                    Text(
-                      'لحظاتی پیش در محله',
+                      date ,
                       style: TextStyle(
                         color: textColor,
                         fontSize: textSize,
@@ -69,4 +58,3 @@ class _poststate extends State<post> {
         ));
   }
 }
-
