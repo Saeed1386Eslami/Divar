@@ -92,7 +92,6 @@ class FirstPage extends StatelessWidget {
 post2() {
 
   @override
-  Widget build(BuildContext context) {
     var textColor = Colors.grey;
     var textSize = 20.0;
     var textColor2 = Colors.black;
@@ -137,7 +136,6 @@ post2() {
           ),
         ));
   }
-}
 
 
 class SecondPage extends StatelessWidget {
