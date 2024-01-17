@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:divar/post_information.dart';
 
 var textColor = Colors.black;
 var textColor2 = Colors.grey;
+var textColor3 = Colors.white;
 var textSize = 24.0;
 var textSize2 = 18.0;
 
 class Detail extends StatelessWidget {
-  const Detail({super.key});
+PostInformation information;
+
+   Detail({super.key , required this.information });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,7 @@ class Detail extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.network(
-              'https://picsum.photos/250?image=9',
+              information.imageUrl,
               width: 200,
               height: 200,
             ),
@@ -41,13 +45,13 @@ class Detail extends StatelessWidget {
                               fontSize: textSize2,
                             )),
                         Spacer(),
-                        Text('عنوان آگهی',
+                        Text( information.name ,
                             style: TextStyle(
                               color: textColor,
                               fontSize: textSize,
                             )),
                         Text(
-                          'لحظاتی پیش در شهر محدوده، دسته',
+                          information.date,
                           style: TextStyle(
                             color: textColor2,
                             fontSize: textSize2,
@@ -75,7 +79,7 @@ class Detail extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Text(
               " توضیحات ",
-              textDirection: TextDirection.rtl,
+              textAlign: TextAlign.end,
               style: TextStyle(
                 fontSize: textSize,
                 color: textColor,
@@ -84,10 +88,10 @@ class Detail extends StatelessWidget {
           ),
           Text(
             " دیوار در زمینه فروش و خرید محصولات و"
-            " خدمات مختلف فعالیت می کند و به کاربرانش این امکان را می دهد"
-            " تا به راحتی و با قیمت مناسب، کالاهای موردنیازشان را"
-            " پیدا کنند."
-            " از جمله محصولاتی که در دیوار به فروش می رسد، می توان... ",
+                " خدمات مختلف فعالیت می کند و به کاربرانش این امکان را می دهد"
+                " تا به راحتی و با قیمت مناسب، کالاهای موردنیازشان را"
+                " پیدا کنند."
+                " از جمله محصولاتی که در دیوار به فروش می رسد، می توان... ",
             textDirection: TextDirection.rtl,
             style: TextStyle(
               fontSize: textSize2,
@@ -102,17 +106,16 @@ class Detail extends StatelessWidget {
   }
 }
 
-// جزییات اسم مناسبی نیست ولی فعلا این گذاشتم که کار رو جلو ببره. این قسمت هم تست نشده و نمیدونم وقتی ران بشه مثل عکس قرار میگیرن نوشته هاش یا نه
 class Joziat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(17),
+      padding: const EdgeInsets.all(2.0),
       child: (Row(
         children: [
           Container(
-            width: 60,
-            height: 60,
+            width: 30,
+            height: 30,
             child: Icon(Icons.question_mark_outlined),
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -127,17 +130,16 @@ class Joziat extends StatelessWidget {
   }
 }
 
-// این قسمت هم همین طور. بخش پایینی عکس مربوطه هست و نمیدونم که چجور قراره ران بشه
 class Joziat2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(17),
+      padding: const EdgeInsets.all(2.0),
       child: (Row(
         children: [
           Container(
-            width: 60,
-            height: 60,
+            width: 30,
+            height: 30,
             child: Icon(Icons.add),
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -163,9 +165,9 @@ class Onvan extends StatelessWidget {
         children: [
           Expanded(
               child: Text(
-            'مقدار',
-            style: TextStyle(fontSize: textSize2, color: textColor),
-          )),
+                'مقدار',
+                style: TextStyle(fontSize: textSize2, color: textColor),
+              )),
           Text(
             'عنوان',
             style: TextStyle(

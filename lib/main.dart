@@ -1,5 +1,6 @@
 import 'package:divar/PostDetail.dart';
 import 'package:divar/post.dart';
+import 'package:divar/post_information.dart';
 import 'package:flutter/material.dart';
 import 'Category.dart';
 
@@ -30,6 +31,37 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    PostInformation post1 = PostInformation(
+         name: " محصول شماره یک",
+        price: "400 تومان",
+       date: " امروز ",
+        imageUrl: "https://picsum.photos/250?image=9");
+
+    PostInformation post2 = PostInformation(
+      name: " محصول شماره دو ",
+      price: "700 تومان ",
+      date: " دیروز ",
+      imageUrl: 'https://picsum.photos/250?image=8',
+    );
+    PostInformation post3 = PostInformation(
+      name: " محصول شماره سه ",
+      price: "300 تومان ",
+      date: " دیروز ",
+      imageUrl: 'https://picsum.photos/250?image=11',
+    );
+    PostInformation post4 = PostInformation(
+      name: " محصول شماره چهار ",
+      price: "300 تومان ",
+      date: " دیروز ",
+      imageUrl: 'https://picsum.photos/250?image=5',
+    );
+    PostInformation post5 = PostInformation(
+      name: " محصول شماره پنج ",
+      price: "300 تومان ",
+      date: " دیروز ",
+      imageUrl: 'https://picsum.photos/250?image=18',
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -43,13 +75,16 @@ class FirstPage extends StatelessWidget {
               color: Colors.black,
             ),
             InkWell(
-              child: post(" محصول شماره یک ", "400 تومان", " امروز ",
-                  "https://picsum.photos/250?image=9"),
+              child: post(
+                information: post1,
+              ),
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Detail(),
+                    builder: (context) => Detail(
+information: post1,
+                    ),
                   ),
                 );
               },
@@ -57,101 +92,125 @@ class FirstPage extends StatelessWidget {
             Divider(
               color: Colors.black,
             ),
-            post(
-              " محصول شماره دو ",
-              "700 تومان ",
-              " دیروز ",
-              'https://picsum.photos/250?image=10',
+            InkWell(
+              child: post(
+                information: post2,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Detail(
+information: post2,
+                    ),
+                  ),
+                );
+              },
             ),
             Divider(
               color: Colors.black,
             ),
-            post(" محصول شماره سه ", "300 تومان", " سه روز پیش ",
-                "https://picsum.photos/250?image=11"),
+            InkWell(
+              child: post(information: post3,),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Detail(
+information: post3,
+                    ),
+                  ),
+                );
+              },
+            ),
             Divider(
               color: Colors.black,
             ),
-            post(" محصول شماره چهار ", " 900 تومان", " 5 روز پیش ",
-                "https://picsum.photos/250?image=12"),
+            InkWell(
+              child: post(information: post4,),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Detail(
+information: post4,
+                    ),
+                  ),
+                );
+              },
+            ),
             Divider(
               color: Colors.black,
             ),
-            post(" محصول شماره پنج ", " 100 نومان ", " یک هفته پیش ",
-                "https://picsum.photos/250?image=13"),
+            InkWell(
+              child: post(information: post5,),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Detail(
+information: post5,
+                    ),
+                  ),
+                );
+              },
+            ),
             Divider(
               color: Colors.black,
             ),
-            post2(),
+            PostKhas()
           ],
         ),
       ),
     );
   }
 }
-// پست2 چک نشده ولی فکر کنم بدون باگ کار میکنه ، این رو امروز نوشتم و نتونستم ران شدش رو ببینم
-post2() {
+
+
+PostKhas() {
 
   @override
-    var textColor = Colors.grey;
-    var textSize = 20.0;
-    var textColor2 = Colors.black;
-    return Padding(
-        padding: const EdgeInsets.all(16),
-        child: SizedBox(
-          height: 200,
-          child: Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.asset("assets/images/1.webp" ,
-                  height: 200,
-                  width : 200,
-                ),
+  var textColor = Colors.grey;
+  var textSize = 20.0;
+  var textColor2 = Colors.black;
+  return Padding(
+      padding: const EdgeInsets.all(16),
+      child: SizedBox(
+        height: 200,
+        child: Row(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset("assets/images/1.webp" ,
+                height: 200,
+                width : 200,
               ),
-              Expanded(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text( "  درب چوبی " , style: TextStyle(
-                          color: textColor2,
+            ),
+            Expanded(
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text( "  درب چوبی " , style: TextStyle(
+                        color: textColor2,
+                        fontSize: textSize,
+                      ),
+                      ),
+                      const Spacer(),
+                      Text(" 4 میلیون و 300 هزار تومان " ,
+                        style: TextStyle(
+                          color: textColor,
                           fontSize: textSize,
                         ),
+                      ),
+                      Text(
+                        " 11 روز پیش " ,
+                        style: TextStyle(
+                          color: textColor,
+                          fontSize: textSize,
                         ),
-                        const Spacer(),
-                        Text(" 4 میلیون و 300 هزار تومان " ,
-                          style: TextStyle(
-                            color: textColor,
-                            fontSize: textSize,
-                          ),
-                        ),
-                        Text(
-                          " 11 روز پیش " ,
-                          style: TextStyle(
-                            color: textColor,
-                            fontSize: textSize,
-                          ),
-                        ),
-                      ])),
-            ],
-          ),
-        ));
-  }
-
-
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: IconButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        icon: Icon(Icons.arrow_back),
-      )),
-      backgroundColor: Colors.amber,
-    );
-  }
+                      ),
+                    ])),
+          ],
+        ),
+      ));
 }

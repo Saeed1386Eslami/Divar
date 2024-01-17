@@ -1,13 +1,11 @@
+import 'package:divar/post_information.dart';
 import 'package:flutter/material.dart';
 
 class post extends StatelessWidget {
 
-  String name;
-  String price;
-  String date;
-  String imageUrl;
+  PostInformation information;
 
-  post(this.name , this.price , this.date , this.imageUrl);
+  post({required this.information});
 
 
   @override
@@ -24,7 +22,7 @@ class post extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.network(
-                  imageUrl,
+                  information.imageUrl,
                   width: 200,
                   height: 200,
                 ),
@@ -33,20 +31,20 @@ class post extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                    Text(name  , style: TextStyle(
+                    Text(information.name  , style: TextStyle(
                       color: textColor2,
                       fontSize: textSize,
                     ),
                     ),
                     const Spacer(),
-                    Text(price ,
+                    Text(information.price ,
                       style: TextStyle(
                         color: textColor,
                         fontSize: textSize,
                       ),
                     ),
                     Text(
-                      date ,
+                      information.date ,
                       style: TextStyle(
                         color: textColor,
                         fontSize: textSize,
