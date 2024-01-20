@@ -41,7 +41,7 @@ class FirstPage extends StatelessWidget {
       name: " محصول شماره دو ",
       price: "700 تومان ",
       date: " دیروز ",
-      imageUrl: 'https://picsum.photos/250?image=8',
+      imageUrl: 'https://picsum.photos/250?image=12',
     );
     PostInformation post3 = PostInformation(
       name: " محصول شماره سه ",
@@ -53,7 +53,7 @@ class FirstPage extends StatelessWidget {
       name: " محصول شماره چهار ",
       price: "300 تومان ",
       date: " دیروز ",
-      imageUrl: 'https://picsum.photos/250?image=5',
+      imageUrl: 'https://picsum.photos/250?image=13',
     );
     PostInformation post5 = PostInformation(
       name: " محصول شماره پنج ",
@@ -196,7 +196,7 @@ PostKhas() {
                       ),
                       ),
                       const Spacer(),
-                      Text(" 4 میلیون و 300 هزار تومان " ,
+                      Text(" 4 تومان " ,
                         style: TextStyle(
                           color: textColor,
                           fontSize: textSize,

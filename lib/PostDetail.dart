@@ -6,11 +6,12 @@ var textColor2 = Colors.grey;
 var textColor3 = Colors.white;
 var textSize = 24.0;
 var textSize2 = 18.0;
+var textSize3 = 13.0;
 
 class Detail extends StatelessWidget {
-PostInformation information;
+  PostInformation information;
 
-   Detail({super.key , required this.information });
+  Detail({super.key, required this.information});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,7 @@ PostInformation information;
                               fontSize: textSize2,
                             )),
                         Spacer(),
-                        Text( information.name ,
+                        Text(information.name,
                             style: TextStyle(
                               color: textColor,
                               fontSize: textSize,
@@ -76,7 +77,7 @@ PostInformation information;
             color: Colors.grey,
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(17),
             child: Text(
               " توضیحات ",
               textAlign: TextAlign.end,
@@ -94,63 +95,36 @@ PostInformation information;
                 " از جمله محصولاتی که در دیوار به فروش می رسد، می توان... ",
             textDirection: TextDirection.rtl,
             style: TextStyle(
-              fontSize: textSize2,
+              fontSize: textSize3,
               color: textColor,
             ),
           ),
           Divider(color: Colors.black12, height: 33.7, thickness: 6.8),
-          Joziat(),
+          HelpBar1(),
           Divider(),
-          Joziat2(),
+          HelpBar2(),
+          Container(
+            color: Colors.black12,
+            margin: EdgeInsets.all( 5 ),
+            padding: EdgeInsets.only(right:256 , top: 22.5),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                'پیام در چت',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(1),
+                  ),
+                  primary: Colors.red,
+                  fixedSize: const Size(140, 40)),
+            ),
+          ),
         ]));
-  }
-}
-
-class Joziat extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: (Row(
-        children: [
-          Container(
-            width: 30,
-            height: 30,
-            child: Icon(Icons.question_mark_outlined),
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.black26),
-                color: Colors.white54),
-          ),
-          Text(" راهنمای خرید امن "),
-          Text(">")
-        ],
-      )),
-    );
-  }
-}
-
-class Joziat2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: (Row(
-        children: [
-          Container(
-            width: 30,
-            height: 30,
-            child: Icon(Icons.add),
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.black26),
-                color: Colors.white54),
-          ),
-          Text(" ثبت تخلف و مشکل آگهی "),
-          Text(">")
-        ],
-      )),
-    );
   }
 }
 
@@ -175,6 +149,56 @@ class Onvan extends StatelessWidget {
               color: textColor2,
             ),
           ),
+        ],
+      )),
+    );
+  }
+}
+
+class HelpBar1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(7.0),
+      child: (Row(
+        children: [
+          Container(
+            width: 30,
+            height: 30,
+            child: Icon(Icons.question_mark_outlined),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.black26),
+                color: Colors.white54),
+          ),
+          Text(
+            " راهنمای خرید امن                                                               >",
+            textAlign: TextAlign.end,
+          ),
+        ],
+      )),
+    );
+  }
+}
+
+class HelpBar2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(7.0),
+      child: (Row(
+        children: [
+          Container(
+            width: 30,
+            height: 30,
+            child: Icon(Icons.add),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.black26),
+                color: Colors.white54),
+          ),
+          Text(
+              " ثبت تخلف و مشکل آگهی                                                     >"),
         ],
       )),
     );
