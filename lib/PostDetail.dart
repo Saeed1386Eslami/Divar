@@ -80,7 +80,7 @@ class Detail extends StatelessWidget {
             padding: const EdgeInsets.all(17),
             child: Text(
               " توضیحات ",
-              textAlign: TextAlign.end,
+    textDirection: TextDirection.rtl,
               style: TextStyle(
                 fontSize: textSize,
                 color: textColor,
@@ -89,10 +89,10 @@ class Detail extends StatelessWidget {
           ),
           Text(
             " دیوار در زمینه فروش و خرید محصولات و"
-                " خدمات مختلف فعالیت می کند و به کاربرانش این امکان را می دهد"
-                " تا به راحتی و با قیمت مناسب، کالاهای موردنیازشان را"
-                " پیدا کنند."
-                " از جمله محصولاتی که در دیوار به فروش می رسد، می توان... ",
+            " خدمات مختلف فعالیت می کند و به کاربرانش این امکان را می دهد"
+            " تا به راحتی و با قیمت مناسب، کالاهای موردنیازشان را"
+            " پیدا کنند."
+            " از جمله محصولاتی که در دیوار به فروش می رسد، می توان... ",
             textDirection: TextDirection.rtl,
             style: TextStyle(
               fontSize: textSize3,
@@ -104,24 +104,37 @@ class Detail extends StatelessWidget {
           Divider(),
           HelpBar2(),
           Container(
+            height: 80,
             color: Colors.black12,
-            margin: EdgeInsets.all( 5 ),
-            padding: EdgeInsets.only(right:256 , top: 22.5),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                'پیام در چت',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(1),
+            padding: EdgeInsets.only(left: 10, top: 27.0),
+            child: Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'پیام در چت',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
                   ),
-                  primary: Colors.red,
-                  fixedSize: const Size(140, 40)),
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(1),
+                      ),
+                      primary: Colors.red,
+                      fixedSize: const Size(140, 40)),
+                ),
+                Expanded(
+                  child: Text(
+                    ' شماره مخفی شده است ; پیام دهید ',
+                    textDirection: TextDirection.rtl,
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ]));
@@ -139,9 +152,9 @@ class Onvan extends StatelessWidget {
         children: [
           Expanded(
               child: Text(
-                'مقدار',
-                style: TextStyle(fontSize: textSize2, color: textColor),
-              )),
+            'مقدار',
+            style: TextStyle(fontSize: textSize2, color: textColor),
+          )),
           Text(
             'عنوان',
             style: TextStyle(
@@ -191,7 +204,7 @@ class HelpBar2 extends StatelessWidget {
           Container(
             width: 30,
             height: 30,
-            child: Icon(Icons.add),
+            child: Icon(Icons.warning_amber),
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.black26),
