@@ -22,13 +22,15 @@ class Detail extends StatelessWidget {
           child: Icon(Icons.share_outlined),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-        body: Column(children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-              information.imageUrl,
-              width: 200,
-              height: 200,
+        body: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+          Center(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(
+                information.imageUrl,
+                width: 200,
+                height: 200,
+              ),
             ),
           ),
           Padding(
@@ -167,7 +169,7 @@ class Onvan extends StatelessWidget {
     );
   }
 }
-
+//اصلاح شود
 class HelpBar1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -175,6 +177,12 @@ class HelpBar1 extends StatelessWidget {
       padding: const EdgeInsets.all(7.0),
       child: (Row(
         children: [
+          Icon(Icons.arrow_back_ios_new_rounded),
+          Spacer(),
+          Text(
+            " راهنمای خرید امن ",
+            textAlign: TextAlign.end,
+          ),
           Container(
             width: 30,
             height: 30,
@@ -183,10 +191,6 @@ class HelpBar1 extends StatelessWidget {
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.black26),
                 color: Colors.white54),
-          ),
-          Text(
-            " راهنمای خرید امن                                                               >",
-            textAlign: TextAlign.end,
           ),
         ],
       )),
