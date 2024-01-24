@@ -33,6 +33,12 @@ class Detail extends StatelessWidget {
               ),
             ),
           ),
+              //IconButton(
+                //onPressed: () {
+                  //Navigator.pop(context);
+                //},
+                //icon: Icon(Icons.arrow_back),
+              //),
           Padding(
             padding: const EdgeInsets.all(5),
             child: SizedBox(
@@ -102,9 +108,15 @@ class Detail extends StatelessWidget {
             ),
           ),
           Divider(color: Colors.black12, height: 33.7, thickness: 6.8),
-          HelpBar1(),
+          HelpBar(
+            Help_text: " راهنمای خرید امن ",
+            icon: Icons.question_mark,
+          ),
           Divider(),
-          HelpBar2(),
+          HelpBar(
+            Help_text:" ثبت تخلف و مشکل آگهی ",
+            icon: Icons.warning_amber,
+          ),
           Container(
             height: 80,
             color: Colors.black12,
@@ -169,8 +181,13 @@ class Onvan extends StatelessWidget {
     );
   }
 }
-//اصلاح شود
-class HelpBar1 extends StatelessWidget {
+
+class HelpBar extends StatelessWidget {
+  var Help_text;
+  IconData icon ;
+
+  HelpBar({ super.key, required this.Help_text , required this.icon });
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -180,42 +197,18 @@ class HelpBar1 extends StatelessWidget {
           Icon(Icons.arrow_back_ios_new_rounded),
           Spacer(),
           Text(
-            " راهنمای خرید امن ",
+            Help_text,
             textAlign: TextAlign.end,
           ),
           Container(
             width: 30,
             height: 30,
-            child: Icon(Icons.question_mark_outlined),
+            child: Icon(icon),
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(color: Colors.black26),
                 color: Colors.white54),
           ),
-        ],
-      )),
-    );
-  }
-}
-
-class HelpBar2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(7.0),
-      child: (Row(
-        children: [
-          Container(
-            width: 30,
-            height: 30,
-            child: Icon(Icons.warning_amber),
-            decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.black26),
-                color: Colors.white54),
-          ),
-          Text(
-              " ثبت تخلف و مشکل آگهی                                                     >"),
         ],
       )),
     );
